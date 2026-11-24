@@ -1,0 +1,22 @@
+# Name: AdsPower
+# Description: Surge Rule-Set for AdsPower (Web, macOS/iOS Client & Built-in Browser Kernels)
+# Behavior: RULE-SET (Do NOT use as DOMAIN-SET because it contains PROCESS-NAME rules)
+
+# --- 1. AdsPower 核心域名（网页后台 / 客户端 API / 内核更新 / iOS 端通信） ---
+DOMAIN-SUFFIX,adspower.com
+DOMAIN-SUFFIX,adspower.net
+DOMAIN-SUFFIX,adspower.io
+
+# --- 2. 本地 API 域名（建议在主配置中单独走 DIRECT，若需统一接管可保留） ---
+# DOMAIN,local.adspower.net
+
+# --- 3. macOS 客户端主进程 ---
+PROCESS-NAME,AdsPower Global
+PROCESS-NAME,AdsPower
+PROCESS-NAME,AdsPower*
+
+# --- 4. macOS 客户端打开的指纹浏览器内核进程 ---
+PROCESS-NAME,SunBrowser
+PROCESS-NAME,SunBrowser*
+PROCESS-NAME,FlowerBrowser
+PROCESS-NAME,FlowerBrowser*
